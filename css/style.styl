@@ -1,0 +1,274 @@
+@import "normalize.styl"
+@import "iconitos.styl"
+// colores
+gris_oscuro=#333333
+gris_claro=#818181
+color_red =#F34444
+gris_back=#f0f0f0
+// mixin
+animation(parametros)
+	-webkit-animation parametros
+	-moz-animation parametros
+	-ms-animation parametros
+	-o-animation parametros
+	animation parametros
+a
+	text-decoration none
+body
+	background gris_back
+	font-size 16px
+	font-family 'Varela Round', sans-serif
+header
+	background #fff
+	border-bottom 1px solid gris_claro
+	height 3.5em
+	padding 1em 0
+	text-align center
+	width 100%
+	.button-menu
+		color gris_oscuro
+		font-size 1.5em
+		left 1em
+		margin-top -8px
+		position absolute
+		top 50%
+	.title
+		font-size 1.7em
+		line-height 2.5em
+		margin 0
+		text-align center
+figure
+	margin 0
+.menu
+	display none
+	ul
+		list-style none
+		width 1000px
+		margin 9px auto
+		li
+			text-decoration none
+			float left
+			a
+				padding 1.3em 1em
+				display block
+				color gris_oscuro
+				text-transform uppercase
+				border-top 7px solid transparent
+				&:hover
+					border-top 7px solid gris_claro
+					transition .5s		
+.container
+	padding 1.4em
+	text-align center
+.song
+	display inline-block
+	margin-bottom 1em
+	margin-right 1em
+	padding .5em
+	text-align left
+	width 8em
+	&:nth-child(even)
+		margin-right 0
+	p 
+		margin .5em 0
+		font-widht 1.5em
+.relative
+	position relative
+.center-text
+	text-align center
+.center-block
+	margin 0 auto
+.actions
+	background rgba(0, 0, 0, 0.46)
+	bottom 0
+	left 0
+	position absolute
+	right 0
+	margin-bottom .2em
+.action
+	color white
+	margin-right .5em
+	font-size 1.2em
+	&:last-child
+		margin-right 0
+	&.gray
+		color gris_oscuro
+.padding
+	padding 1em
+.right-text
+	text-align right
+.playing-cover
+	text-align center
+	width 100%
+	margin-top 1em
+	img
+		width 100%
+		height 100%
+.playing
+	&.small
+		width 87%
+		margin 0 auto
+.progress
+	margin-top 10px
+	.total
+		height 5px
+		width 74%
+		background gris_claro
+		border-radius 5px
+		display inline-block
+	.min
+	.max
+		font-size .9em
+	.state
+		height 5px
+		width 30%
+		background color_red
+		border-radius 5px
+		position relative
+		// Animando con css stablece el tiempo, y repeticion
+		animation(1s state infinite)
+	.circle
+		height 10px
+		width 10px
+		background gris_oscuro
+		border-radius 50%
+		position absolute
+		right 0
+		top -2px
+		animation(1s circle infinite)
+// efectos de animación
+// la clase que quiero afectar
+@keyframes state
+	0%
+		background red
+	100%
+		background blue
+@keyframes circle
+	0%
+		-webkit-transform scale(1)
+	100%
+		-webkit-transform scale(2)
+.description
+	margin-top 1em
+	border-bottom 1px solid gris_claro
+	padding-bottom 1em
+	.name	
+		color gris_oscuro
+		margin 0
+		font-size 1.4em
+	.author
+		color gris_claro
+		margin .3em
+// caja reprodución
+.play
+	padding-top 1em
+.play-list
+	margin 1em
+	padding 1em
+.box-music
+	display inline-block
+	width 100%
+.playing.small
+	width 100%
+	display inline-block
+.list-box
+	width 100%
+	height 70px
+	border-bottom 1px solid gris_oscuro
+	margin-left 1em
+.list-style
+	display inline-block
+	float left
+	margin-top 20px
+.list-song__right
+	display inline-block
+	float right
+.icon-list-size
+	font-size .9em
+.box-tile
+	display none
+// box serachr iconitos
+.box-serach
+	position relative
+	float left
+	.icon-lupa
+		position absolute
+		top 15px
+		left 8px	
+	.cerrar
+		position absolute
+		top 12px
+		right 10px	
+@media screen and (min-width 480px)
+	.container
+		.song:nth-child(even)
+			margin-right 1em
+@media screen and (min-width 1000px)
+	.playing.small
+		width 500px
+		display inline-block
+		margin-right 2em
+	.box-music 
+		display inline-block
+		width 100%
+		margin 0 auto
+		margin-top 0
+		text-align center
+	.play-list 
+		margin 1em
+		padding 1em
+		display inline-block
+		width 400px
+		vertical-align top
+		border-left 1px solid gris_claro
+	header
+		.menu
+			display block
+		#menu-res
+			display none
+		.title
+			display none
+		.box-tile
+			display inline-block
+			width 1000px
+		.search
+			display inline-block
+			float right
+			.box-user
+				display inline-block
+				vertical-align middle
+				margin-left 1em
+				padding-right .5em
+				position relative
+				&::after
+					content ""
+					display inline-block
+					border-top 7px solid gris_oscuro
+					border-left 7px solid transparent
+					border-right 7px solid transparent
+					position absolute
+					top 17px
+					right 1px
+					
+				.avatar
+					display inline-block
+					img
+						border-radius 50%
+				p 
+					display inline-block
+					margin 0
+					vertical-align top
+					padding .7em
+			input[type="text"]
+				display inline-block
+				padding 0.3em 0 .5em 2em
+				border-radius 10px
+				height 30px
+				border 1px solid #949494
+		.logo
+			display inline-block
+			float left
+			padding .5em
+			
+	
+	
